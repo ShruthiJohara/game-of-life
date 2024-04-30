@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    {
+    
 
     stages {
 
@@ -39,4 +39,4 @@ stage('Tomcatdeploy') {
         }
 }
 }
-}
+
