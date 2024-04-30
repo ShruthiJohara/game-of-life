@@ -10,6 +10,8 @@ pipeline {
 git 'https://github.com/ShruthiJohara/game-of-life.git'
 }
         }
+
+        
 stage('Sonarcodequality') {
             steps {
                 echo ‘Checking code quality’
@@ -37,6 +39,7 @@ stage('Tomcatdeploy') {
   deploy adapters: [tomcat9(credentialsId: '80459988-41e8-44f0-b42f-f47712085d30', path: '', url: 'http://54.236.24.75:8081/')], contextPath: 'Gameoflife', war: '*/*.war'
             }
         }
+
 }
 }
 
