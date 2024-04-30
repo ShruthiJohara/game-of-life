@@ -14,7 +14,17 @@ pipeline {
 
             }
         }
-		
+
+stage('Build Artifact ') {
+            steps {
+                echo 'generating artifact with maven build tool'
+				sh 'mvn  compile'
+            }
+        }
+
+
+
+	    
 		stage('SONARqube ANALYSIS') {
             steps {
                 echo 'code inspection of  GAME OF LIFE project code'
