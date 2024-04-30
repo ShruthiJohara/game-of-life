@@ -18,7 +18,7 @@ pipeline {
 stage('Build compile stage ') {
             steps {
                 echo 'generating artifact with maven build tool'
-				sh 'mvn  compile'
+				sh 'mvn clean compile'
             }
         }
 
@@ -39,7 +39,7 @@ stage('Build compile stage ') {
 		stage('Build Artifact ') {
             steps {
                 echo 'generating artifact with maven build tool'
-				sh 'mvn package'
+				sh 'mvn clean install'
             }
         }
 		
