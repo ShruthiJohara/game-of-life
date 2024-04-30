@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-stage('Build Artifact ') {
+stage('Build compile stage ') {
             steps {
                 echo 'generating artifact with maven build tool'
 				sh 'mvn  compile'
