@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage(‘cloninggitrepo') {
+        stage('cloninggitrepo') {
             steps {
                 echo ‘Cloning git repo’
 git 'https://github.com/ShruthiJohara/game-of-life.git'
@@ -13,7 +13,7 @@ git 'https://github.com/ShruthiJohara/game-of-life.git'
 
 
 
-stage(‘Sonarcodequality') {
+stage('Sonarcodequality') {
             steps {
                 echo ‘Checking ode quality’
 sh '''mvn sonar:sonar \\
@@ -25,7 +25,7 @@ sh '''mvn sonar:sonar \\
 
 
 
-stage(‘mvncleanpackage’) {
+stage('mvncleanpackage') {
             steps {
                 echo ‘generating Artifacts’
 sh '''mvn clean package’’’
@@ -34,7 +34,7 @@ sh '''mvn clean package’’’
         }
 
 
-stage(‘Tomcatdeploy’) {
+stage('Tomcatdeploy') {
             steps {
                 echo ‘Deploy artifact to tomcat’
   deploy adapters: [tomcat9(credentialsId: '80459988-41e8-44f0-b42f-f47712085d30', path: '', url: 'http://54.236.24.75:8081/')], contextPath: 'Gameoflife', war: '*/*.war'
