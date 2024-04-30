@@ -39,7 +39,7 @@ stage('Build compile stage ') {
 		stage('Build Artifact ') {
             steps {
                 echo 'generating artifact with maven build tool'
-				sh 'mvn  install'
+				sh 'mvn package'
             }
         }
 		
