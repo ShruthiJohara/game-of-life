@@ -7,7 +7,7 @@ pipeline {
         stage('cloninggitrepo') {
             steps {
                 echo ‘Cloning git repo’
-git 'https://github.com/ShruthiJohara/game-of-life.git'
+                   git 'https://github.com/ShruthiJohara/game-of-life.git'
 }
         }
 
