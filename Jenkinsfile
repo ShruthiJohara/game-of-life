@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage(‘cloning git repo) {
+        stage(‘cloning git repo') {
             steps {
                 echo ‘Cloning git repo’
 git 'https://github.com/ShruthiJohara/game-of-life.git'
@@ -13,7 +13,7 @@ git 'https://github.com/ShruthiJohara/game-of-life.git'
 
 
 
-stage(‘Sonar-code quality) {
+stage(‘Sonar-code quality') {
             steps {
                 echo ‘Checking ode quality’
 sh '''mvn sonar:sonar \\
@@ -25,7 +25,7 @@ sh '''mvn sonar:sonar \\
 
 
 
-stage(‘man clean package’) {
+stage(‘mvn clean package’) {
             steps {
                 echo ‘generating Artifacts’
 sh '''mvn clean package’’’
